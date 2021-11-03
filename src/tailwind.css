@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*:focus {
+    outline: none !important;
+}
+
+.cont {
+    height: calc(100vh - 5.75rem);
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #616161;
+}
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+    background-color: #6e6e6e;
+}
+
+.btn-container {
+    padding: 0.375rem 0.75rem;
+}
+
+.btn {
+    width: calc(33% - 0.375rem);
+    height: calc(50% - 0.75rem);
+    margin: 0.375rem 0;
+}
+
+svg {
+    font-size: 1.6rem !important;
+}
+
+.filter-sepeator {
+    min-height: 100%;
+    background-color: rgba(75, 85, 99);
+    width: 1px;
+}
+
+.card-container:hover .card-top {
+    transform: translateY(100%);
+    transition: 0.1s ease-in;
+}
+.card-container:hover .card-down {
+    animation: cardAnimate 0.8s ease-out forwards;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-down {
+    transform: translateY(-100%);
+    transition: 0.3s ease-out;
+}
+
+.card-half {
+    width: calc(50% - 0.25rem);
+}
+
+@keyframes cardAnimate {
+    0% {
+        transform: translateY(-100%);
+    }
+    10% {
+        transform: translateY(0);
+    }
+    35% {
+        transform: translateY(-20%);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    85% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
+        background-color: transparent;
+    }
+}
+
+.hover-location {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hover-location .tooltip {
+    position: absolute;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 0.6rem 2rem;
+    pointer-events: none;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.hover-location .tooltip.top {
+    top: calc(-100% + -15px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.hover-location .tooltip.right {
+    top: 50%;
+    left: calc(100% + 15px);
+    transform: translateY(-50%);
+}
+.hover-location .tooltip.left {
+    top: 50%;
+    right: calc(100% + 15px);
+    transform: translateY(-50%);
+}
+.hover-location .tooltip.bottom {
+    left: 50%;
+    bottom: calc(-100% + -15px);
+    transform: translateX(-50%);
+}
+
+.hover-location:hover .tooltip {
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.contact-form {
+    max-height: calc(100vh - 80px);
+}

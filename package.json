@@ -1,0 +1,64 @@
+{
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.11.2",
+        "@material-ui/icons": "^4.11.2",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "apollo-cache-inmemory": "^1.6.6",
+        "apollo-client": "^2.6.10",
+        "apollo-link-context": "^1.0.20",
+        "apollo-link-http": "^1.5.17",
+        "autoprefixer": "^10.0.4",
+        "chokidar-cli": "^2.1.0",
+        "dayjs": "^1.9.7",
+        "graphql": "^15.4.0",
+        "graphql-tag": "^2.11.0",
+        "jwt-decode": "^3.1.2",
+        "moment": "^2.29.1",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.1.14",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-icons": "^4.1.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.1",
+        "react-toastify": "^6.2.0",
+        "sweetalert2": "^10.12.6",
+        "sweetalert2-react": "^0.8.3",
+        "tailwindcss": "^2.0.1",
+        "web-vitals": "^0.2.4"
+    },
+    "scripts": {
+        "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
+        "watch:tailwind": "chokidar src/**/*.css src/**/*.scss --igonre src/tailwind.output.css -c npm run build:tailwind",
+        "watch": "chokidar src/**/*.css src/**/*.scss --igonre src/tailwind.output.css",
+        "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+        "start:react": "react-scripts start",
+        "prebuild": "npm run build:tailwind",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
